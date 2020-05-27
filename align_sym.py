@@ -103,7 +103,7 @@ def grow_diag(union, alignment, e_len, f_len):
                 if alignment[e][f]:
                     for (e_new, f_new) in neighboring_points((e, f), e_len, f_len):
                         if not (aligned_e(e_new, f_len, alignment) and aligned_f(f_new, e_len, alignment)) \
-                                and union[e_new][f_new]:
+                                and union[e_new][f_new] and not alignment[e_new][f_new]:
                             alignment[e_new][f_new] = True
                             new_points_added = True
 
